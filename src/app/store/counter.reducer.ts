@@ -14,7 +14,7 @@ const initialState: CounterState = {
 const _storeReducer = createReducer(
   initialState,
   on(CounterActions.increment, state => ({ ...state, count: state.count + 1 })),
-  on(CounterActions.decrement, state => ({ ...state, count: state.count - 1 })),
+  on(CounterActions.decrement, (state) => (state.count > 0 ? { ...state, count: state.count - 1 } : state)),
   on(CounterActions.reset, state => ({ ...state, count: 0 })),
   on(CounterActions.setInitialValue, (state, { count }) => ({ ...state, count })),
   on(CounterActions.incrementBy, (state, { value }) => ({ ...state, count: state.count + value })),

@@ -55,9 +55,8 @@
         type="number"
         [(ngModel)]="incrementValue"
       />
-      <button (click)="onIncrementBy()" class="p-2 bg-cello rounded-md text-[#fff] shadow-inner-bottom">
-        Increment
-      </button>
+      <app-button [buttonTitle]="'increment'" [buttonName]="' + Increment '"
+      [buttonEvent]="onIncrementBy.bind(this)" [customClass]="'bg-wellread '"/>
     </section>
 
     <!-- Set To Custom Input -->
@@ -69,9 +68,8 @@
         type="number"
         [(ngModel)]="setToValue"
       />
-      <button (click)="onSetTo()" class="p-2 bg-wellread rounded-md text-[#fff] shadow-inner-bottom">
-        Set To
-      </button>
+      <app-button [buttonTitle]="'set to'" [buttonName]="' Set To '"
+      [buttonEvent]="onSetTo.bind(this)" [customClass]="'bg-william '"/>
     </section>
 
     <!-- Multiply By Custom Input -->
@@ -83,9 +81,8 @@
         type="number"
         [(ngModel)]="multiplyByValue"
       />
-      <button (click)="onMultiplyBy()" class="p-2 bg-pavlova rounded-md text-[#fff] shadow-inner-bottom">
-        Multiply
-      </button>
+      <app-button [buttonTitle]="'multiply by'" [buttonName]="' Multiply by'"
+      [buttonEvent]="onMultiplyBy.bind(this)" [customClass]="'bg-pavlova '"/>
     </section>
   </main>
 </div>
